@@ -7,17 +7,6 @@
 //
 // Copyright 2017 Richa Shastri
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-//
-//http://www.apache.org/licenses/LICENSE-2.0
-//
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
 //
 //I give the full right to Dr lindquist and Arizona State University to build my project and evaluate it or the purpose of determining your grade and program assessment.
 //
@@ -38,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        displayplace.text = placedesc.name + "\n" + placedesc.description + "\n" +  placedesc.category + "\n" +  placedesc.addressTitle + "\n" +  placedesc.addressStreet + "\n" +  placedesc.addressTitle + "\n" +  placedesc.addressStreet + "\n" +  String(placedesc.elevation) + "\n" + String(placedesc.latitude) + "\n" + String(placedesc.longitude)
+        displayplace.text = "Name:" + placedesc.name + "\n" + "Description:" + placedesc.description + "\n" + "Category: " + placedesc.category + "\n" + "Address-Title:" + placedesc.addressTitle + "\n" + "Address-Street" + placedesc.addressStreet + "\n" +  "Elevation: " + String(placedesc.elevation) + "\n" + "Latitude:" + String(placedesc.latitude) + "\n" + "Longitude: " + String(placedesc.longitude)
     }
 
     override func didReceiveMemoryWarning() {

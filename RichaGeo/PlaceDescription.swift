@@ -7,17 +7,7 @@
 //
 // Copyright 2017 Richa Shastri
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-//
-//http://www.apache.org/licenses/LICENSE-2.0
-//
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
+
 //
 //I give the full right to Dr lindquist and Arizona State University to build my project and evaluate it or the purpose of determining your grade and program assessment.
 //
@@ -86,8 +76,8 @@ class PlaceDescription{
         }
     }
     
-    private var elev:Float
-    var elevation:Float{
+    private var elev:Double
+    var elevation:Double{
         set{
             elev=elevation
         }
@@ -96,8 +86,8 @@ class PlaceDescription{
         }
     }
     
-    private var lat:Float
-    var latitude:Float{
+    private var lat:Double
+    var latitude:Double{
         set{
             lat=latitude
         }
@@ -107,8 +97,8 @@ class PlaceDescription{
         
     }
     
-    private var long:Float
-    var longitude:Float{
+    private var long:Double
+    var longitude:Double{
         set{
             long=longitude
         }
@@ -118,7 +108,7 @@ class PlaceDescription{
     }
     
     
-    init(name:String,description:String,category:String,addressTitle:String,addressStreet:String,elevation:Float,latitude:Float,longitude:Float) {
+    init(name:String,description:String,category:String,addressTitle:String,addressStreet:String,elevation:Double,latitude:Double,longitude:Double) {
         self.n=name
         self.des=description
         self.categ=category
