@@ -107,8 +107,20 @@ class PlaceDescription{
         }
     }
     
+    private var img:String
+    var image:String{
+        set{
+            img=image
+        }
+        get{
+            return img
+        }
+    }
     
-    init(name:String,description:String,category:String,addressTitle:String,addressStreet:String,elevation:Double,latitude:Double,longitude:Double) {
+    
+    
+    
+    public init (name:String,description:String,category:String,addressTitle:String,addressStreet:String,elevation:Double,latitude:Double,longitude:Double,image:String) {
         self.n=name
         self.des=description
         self.categ=category
@@ -117,8 +129,74 @@ class PlaceDescription{
         self.elev=elevation
         self.lat=latitude
         self.long=longitude
+        self.img = image
     
     }
+    
+    
+    public init (jsonStr: String){
+        
+        self.n=""
+        self.des=""
+        self.categ=""
+        self.addTitle=""
+        self.addstreet=""
+        self.elev=0
+        self.lat=0
+        self.long=0
+        self.img = ""
+
+        
+        
+        if let data: NSData = jsonStr.data(using: String.Encoding.utf8) as NSData?{
+            do{
+                let dict = try JSONSerialization.jsonObject(with: data as Data,options:.mutableContainers) as?[String:AnyObject]
+                                
+                self.n=(dict!["name"] as? String)!
+                self.des=(dict!["description"] as? String)!
+                
+                self.categ=(dict!["category"] as? String)!
+                self.addTitle=(dict!["address-title"] as? String)!
+
+                self.addstreet=(dict!["address-street"] as? String)!
+
+                self.elev=(dict!["elevation"] as? Double)!
+
+                self.lat=(dict!["latitude"] as? Double)!
+
+                self.long=(dict!["longitude"] as? Double)!
+
+                self.img = (dict!["image"] as? String)!
+
+                
+                
+            } catch {
+                print("unable to convert Json to a dictionary")
+                
+            }
+        }
+    }
+    
+    public init(dict:[String:Any]){
+        self.n = dict["name"] == nil ? "unknown" : dict["name"] as! String
+        self.des=dict["description"] == nil ? "unknown" : dict["description"] as! String
+        
+        self.categ=dict["category"] == nil ? "unknown" : dict["category"] as! String
+        self.addTitle=dict["address-title"] == nil ? "unknown" : dict["address-title"] as! String
+        self.addstreet=dict["address-street"] == nil ? "unknown" : dict["address-street"] as! String
+        
+        self.elev=dict["elevation"] == nil ? 0 : dict["elevation"] as! Double
+        
+        self.lat=dict["latitude"] == nil ? 0 : dict["latitude"] as! Double
+        self.long=dict["longitude"] == nil ? 0 : dict["longitude"] as! Double
+        self.img = dict["image"] == nil ? "unknown" : dict["image"] as! String
+        
+  
+    
+    }
+
+
+    
 }
 
 

@@ -22,12 +22,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let placedesc = PlaceDescription(name:"ASU-Poly", description:"Home of ASU's Software Engineering Programs",category:"School",addressTitle:"ASU Software Engineering", addressStreet:"7171 E Sonoran Arroyo Mall\nPeralta hall 230\n Mesa AZ 85212", elevation: 1300.0, latitude: 33.306388, longitude: -111.679121)
+    //let placedesc = PlaceDescription(name:"ASU-Poly", description:"Home of ASU's Software Engineering Programs",category:"School",addressTitle:"ASU Software Engineering", addressStreet:"7171 E Sonoran Arroyo Mall\nPeralta hall 230\n Mesa AZ 85212", elevation: 1300.0, latitude: 33.306388, longitude: -111.679121)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
-        displayplace.text = "Name:" + placedesc.name + "\n" + "Description:" + placedesc.description + "\n" + "Category: " + placedesc.category + "\n" + "Address-Title:" + placedesc.addressTitle + "\n" + "Address-Street" + placedesc.addressStreet + "\n" +  "Elevation: " + String(placedesc.elevation) + "\n" + "Latitude:" + String(placedesc.latitude) + "\n" + "Longitude: " + String(placedesc.longitude)
+        //displayplace.text = "Name:" + placedesc.name + "\n" + "Description:" + placedesc.description + "\n" + "Category: " + placedesc.category + "\n" + "Address-Title:" + placedesc.addressTitle + "\n" + "Address-Street" + placedesc.addressStreet + "\n" +  "Elevation: " + String(placedesc.elevation) + "\n" + "Latitude:" + String(placedesc.latitude) + "\n" + "Longitude: " + String(placedesc.longitude)
     }
 
     override func didReceiveMemoryWarning() {
